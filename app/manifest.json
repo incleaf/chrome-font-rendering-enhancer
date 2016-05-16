@@ -1,0 +1,18 @@
+{
+  "name": "Enhance Chrome Search Result on OS X",
+  "version": "0.0.2",
+  "manifest_version": 2,
+  "description": "OS X에서 외장모니터를 사용할 때 크롬 검색 결과 창에서 폰트의 색상을 개선해줍니다.",
+  "homepage_url": "http://incleaf.gitbub.io",
+  "content_scripts": [
+    {
+      "matches": ["http://www.google.com/*", "https://www.google.co.kr/*"],
+      "js": ["inject.js"]
+    }
+  ],
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ]
+}
