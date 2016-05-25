@@ -1,25 +1,27 @@
 html, body {
-    width: 400px;
+    width: 440px;
     height: 150px;
     font-family: "Apple SD Gothic Neo", "나눔고딕", "NG", "Malgun Gothic", dotum, sans-serif;
 }
 
-.header { padding: 20px; text-align: right; }
-.buttons { border: solid 1px #c2c2c5;
-   }
-#reset { background-color: black;  }
+.header { padding: 20px; margin-top: 10px; }
+.title { font-weight: 600; }
+.button-container { float: right; }
+.buttons { padding: 6px 10px; background-color: white; }
+.buttons:hover { font-weight: bold; cursor: pointer; }
 
+#resetBtn { color: #999;  }
 
 .noUi-value {
-    margin-top: 13px;
+    margin-top: 14px;
+    font-size: 12px;
 }
 
 .slider-container {
     padding: 0 20px 20px 20px;
 }
-
 #slider {
-    width: 350px;
-    margin: 5px auto;
-    background-color: #ff5e44;
+    width: 400px;
+    margin: 3px auto;
+    background-color: #2196F3;
 }
