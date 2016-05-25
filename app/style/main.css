@@ -1,0 +1,25 @@
+html, body {
+    width: 400px;
+    height: 150px;
+    font-family: "Apple SD Gothic Neo", "나눔고딕", "NG", "Malgun Gothic", dotum, sans-serif;
+}
+
+.header { padding: 20px; text-align: right; }
+.buttons { border: solid 1px #c2c2c5;
+   }
+#reset { background-color: black;  }
+
+
+.noUi-value {
+    margin-top: 13px;
+}
+
+.slider-container {
+    padding: 0 20px 20px 20px;
+}
+
+#slider {
+    width: 350px;
+    margin: 5px auto;
+    background-color: #ff5e44;
+}

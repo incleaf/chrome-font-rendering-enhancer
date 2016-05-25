@@ -4,15 +4,32 @@
   "manifest_version": 2,
   "description": "OS X에서 외장모니터를 사용할 때 크롬 검색 결과 창에서 폰트의 색상을 개선해줍니다.",
   "homepage_url": "http://incleaf.gitbub.io",
+  "background" : {
+    "scripts" : ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "options.html"        // optional
+  },
   "content_scripts": [
     {
-      "matches": ["http://www.google.com/*", "https://www.google.co.kr/*"],
+      "matches": ["http://*/*", "https://*/*"],
       "js": ["inject.js"]
     }
   ],
+  "options_page": "options.html",
+  "options_ui": {
+    // Required.
+    "page": "options.html",
+    // Recommended.
+    "chrome_style": true
+    // Not recommended; only provided for backwards compatibility,
+    // and will be unsupported in a future version of Chrome (TBD).
+    //"open_in_tab": true
+  },
   "permissions": [
     "https://*/*",
     "http://*/*",
-    "tabs"
+    "tabs",
+    "storage"
   ]
 }
