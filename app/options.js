@@ -1,15 +1,26 @@
 (function() {
   chrome.storage.sync.get([
-    'webkitTextStroke'
+    'webkitTextStroke',
+    'disabled'
   ], function(items) {
-    var savedValue = items.webkitTextStroke || 25;
+    // Values from localStorage
+    var strokeSize = items.webkitTextStroke || 25;
+    var disabled = items.disabled || false;
+
+    // DOM Elements
     var slider = document.getElementById('slider');
     var resetBtn = document.getElementById('resetBtn');
     var doneBtn = document.getElementById('doneBtn');
+    var toggle = document.getElementById('toggle');
+
+    // Variables using on logic
     var isSliding;
 
+    toggle.checked = !disabled;
+    updateSlider(!disabled);
+
     noUiSlider.create(slider, {
-      start: savedValue,
+      start: strokeSize,
       connect: "lower",
       pips: {
         mode: 'values',
@@ -46,6 +57,24 @@
       window.close();
     });
 
+    toggle.addEventListener('change', function(e) {
+      updateSlider(e.target.checked);
+      chrome.storage.sync.set({
+        disabled: !e.target.checked
+      }, function() {
+        chrome.tabs.executeScript({
+          file: 'inject.js'
+        });
+      });
+    });
+
+    function updateSlider(isEnabled) {
+      if (isEnabled === true) {
+        slider.removeAttribute('disabled');
+      } else {
+        slider.setAttribute('disabled', true);
+      }
+    }
   });
 })();
 

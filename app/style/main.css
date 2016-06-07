@@ -1,10 +1,10 @@
 html, body {
-    width: 440px;
+    width: 470px;
     height: 150px;
     font-family: "Apple SD Gothic Neo", "나눔고딕", "NG", "Malgun Gothic", dotum, sans-serif;
 }
 
-.header { padding: 20px; margin-top: 10px; }
+.header { padding: 20px; margin-top: 10px; line-height: 35px; }
 .title { font-weight: 600; }
 .button-container { float: right; }
 .buttons { padding: 6px 10px; background-color: white; }
@@ -21,7 +21,66 @@ html, body {
     padding: 0 20px 20px 20px;
 }
 #slider {
-    width: 400px;
+    width: 420px;
     margin: 3px auto;
+    background-color: #2196F3;
+}
+#slider[disabled="true"] {
+    background-color: #cccccc;
+}
+
+.switch, .title { display: inline-block; vertical-align: middle; }
+.switch { margin-bottom: 1px; margin-left: 3px }
+
+.toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+.toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+input.toggle-round + label {
+    padding: 2px;
+    width: 40px;
+    height: 18px;
+    background-color: #dddddd;
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+input.toggle-round + label:before,
+input.toggle-round + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+input.toggle-round + label:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: #fff;
+    border-radius: 60px;
+    transition: background 0.2s;
+}
+input.toggle-round + label:after {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    width: 24px;
+    background-color: #dddddd;
+    border-radius: 52px;
+    transition: margin 0.2s, background 0.2s;
+}
+input.toggle-round:checked + label {
+    background-color: #2196F3;
+}
+input.toggle-round:checked + label:after {
+    margin-left: 10px;
     background-color: #2196F3;
 }
