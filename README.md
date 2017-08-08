@@ -1,4 +1,4 @@
-# enhance-osx-google-search
+# chrome-font-rendering-enhancer
 Enhance google search result on OS X 
 
 https://chrome.google.com/webstore/detail/enhance-chrome-search-res/jjjpbgllolhkbnpbkpcllncfmbiggljo
